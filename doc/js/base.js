@@ -50,3 +50,18 @@ $("ul.nav a" ).click(function() {
         location.hash='';
     };
 });
+
+/* Handle keyboard events. */
+$(document).keydown(function (event) {
+    console.log(event.keyCode)
+    switch (event.keyCode) {
+        // left
+        case 37:
+            location.href = $("ul.navbar-right a[rel='next']").attr('href')
+            break;
+        // right
+        case 39:
+            location.href = $("ul.navbar-right a[rel='prev']").attr('href')
+            break;
+    }
+});
